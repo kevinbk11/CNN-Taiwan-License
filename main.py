@@ -23,7 +23,7 @@ while(1):
                 ans=CutAndNet.read(car) 
                 fp=open(r"C:\Users\User\Desktop\c++\.vscode\car\data.pt","r")
                 base=[]
-                base=fp.readlines()
+                base=fp.readlines() 
                 fp.close()  
                 Out=True
                 for x in base:

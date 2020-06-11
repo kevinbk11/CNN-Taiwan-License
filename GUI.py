@@ -47,10 +47,11 @@ DataBase.attributes("-topmost",1)
 listbox=tk.Listbox(DataBase,height=23)
 
 
+accfile="C:\\Users\\User\\Desktop\\c++\\.vscode\\car\\account.pt"
 
+datafile="C:\\Users\\User\\Desktop\\c++\\.vscode\\car\\data.pt"
 
-
-
+savefile=".vscode\car\save.pt"
 
 log=tk.Toplevel()
 
@@ -110,16 +111,16 @@ class features():
 
         pass
     def ChangePassword(self):
-        fp=open(r"C:\Users\User\Desktop\c++\.vscode\car\account.pt","r")
+        fp=open(accfile,"r")
         list1=fp.readlines()
         fp.close()
-        fx=open(r".vscode\car\save.pt","r")
+        fx=open(savefile,"r")
         NowUser=fx.readline()
         for x in list1:
             if x == NowUser:
                 newp=newpassword.get()
                 list1.remove(NowUser)
-                fp=open(r"C:\Users\User\Desktop\c++\.vscode\car\account.pt","w")
+                fp=open(accfile,"w")
                 for w in list1:
                     fp.write(w)
                 a,b=NowUser.split()
@@ -135,7 +136,7 @@ class features():
 
     def write(self):
 
-        fp=open(r"C:\Users\User\Desktop\c++\.vscode\car\data.pt","a")
+        fp=open(datafile,"a")
 
         if cartext.get()!="":
 
@@ -167,7 +168,7 @@ class features():
 
         User=account.get()+ " " +password.get()+"\n"
         print(User)
-        fp=open(r".vscode\car\account.pt","r")
+        fp=open(accfile,"r")
         list1=fp.readlines()
         fp.close()
         print(list1)
@@ -194,7 +195,7 @@ class features():
             DeleteAllCar.place(x=5,y=85)
 
             ChangePassword.place(x=100,y=85)
-            fx=open(r".vscode\car\save.pt","w")
+            fx=open(savefile,"w")
             fx.write(User)
             fx.close()
         else:
@@ -209,7 +210,7 @@ class features():
 
         listbox.delete(0,'end')
 
-        fp=open(r"C:\Users\User\Desktop\c++\.vscode\car\data.pt","r")
+        fp=open(datafile,"r")
 
         list1=fp.readlines()
 
@@ -233,13 +234,13 @@ class features():
 
         car=car+"\n"
 
-        fp1=open(r"C:\Users\User\Desktop\c++\.vscode\car\data.pt","r")
+        fp1=open(datafile,"r")
 
         list1=fp1.readlines()
 
         fp1.close()
 
-        fp2=open(r"C:\Users\User\Desktop\c++\.vscode\car\data.pt","w")
+        fp2=open(datafile,"w")
 
         if car in list1:
 
@@ -279,7 +280,7 @@ class features():
 
                 if YorNo2=="yes":
 
-                    fp1=open(r"C:\Users\User\Desktop\c++\.vscode\car\data.pt","w")
+                    fp1=open(datafile,"w")
 
                     fp1.write("")
 
@@ -292,7 +293,7 @@ class features():
 
         listbox.delete(0,'end')
 
-        fp=open(r"C:\Users\User\Desktop\c++\.vscode\car\data.pt","r")
+        fp=open(datafile,"r")
 
         list1=fp.readlines()
 
@@ -334,7 +335,7 @@ class features_key():
 
         User=account.get()+ " " +password.get()+"\n"
         print(User)
-        fp=open(r".vscode\car\account.pt","r")
+        fp=open(accfile,"r")
         list1=fp.readlines()
         fp.close()
         print(list1)
@@ -361,7 +362,7 @@ class features_key():
             DeleteAllCar.place(x=5,y=85)
 
             ChangePassword.place(x=100,y=85)
-            fx=open(r".vscode\car\save.pt","w")
+            fx=open(savefile,"w")
             fx.write(User)
             fx.close()
         else:
